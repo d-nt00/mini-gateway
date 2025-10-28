@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  vault:
+    image: hashicorp/vault:1.21
+    container_name: vault-dev
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: root
+      JWT_SHARED_SECRET: "b7873a7a28904399c73593882ad43b16"
+    volumes:
+      - ../vault-init.sh:/entrypoint.sh
+    ports:
+      - "8200:8200"
+    command: ["/entrypoint.sh"]
