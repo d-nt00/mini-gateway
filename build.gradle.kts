@@ -16,6 +16,11 @@ repositories {
 }
 
 dependencies {
+    implementation("io.netty:netty-all:4.2.7.Final")
+    implementation("com.nimbusds:nimbus-jose-jwt:10.5")
+    implementation("io.lettuce:lettuce-core:7.0.0.RELEASE")
+    implementation("org.yaml:snakeyaml:2.5")
+
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
 
